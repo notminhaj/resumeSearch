@@ -12,16 +12,16 @@ UPLOAD_FOLDER = 'resumes'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Initialize models
-embedder = SentenceTransformer('all-mpnet-base-v2')  # Switched to all-mpnet-base-v2 for better embeddings
+embedder = SentenceTransformer('all-mpnet-base-v2') # probably best local embedding model
 
 # Initialize FAISS index
-dimension = 768  # Adjusted for all-mpnet-base-v2 embedding size
+dimension = 768
 faiss_index = faiss.IndexFlatL2(dimension)
 metadata = []  # Store candidate info
 
 # Mistral API Key
 MISTRAL_API_KEY = "YOUR_MISTRAL_API_KEY"
-MODEL_NAME = "mistral-medium"  # Recommended model
+MODEL_NAME = "mistral-medium"
 
 # Function to extract text from PDF
 def extract_text_from_pdf(pdf_path):
@@ -43,7 +43,7 @@ def get_mistral_reasoning(job_description, resume_text):
     response = requests.post(
         url, headers=headers,
         json={
-            "model": MODEL_NAME,  # Using mistral-medium
+            "model": MODEL_NAME,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": 200
         }
@@ -95,14 +95,14 @@ def rank_candidates(job_description, candidates):
                 ranked_candidates.append(candidate)
                 break
     
-    return ranked_candidates if ranked_candidates else candidates  # Return ranked list or original list
+    return ranked_candidates if ranked_candidates else candidates  # Return ranked/original list
 
 # Home page
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# Upload multiple resumes endpoint
+# Upload resumes
 @app.route('/upload', methods=['POST'])
 def upload_resumes():
     resume_files = request.files.getlist('resumes')
@@ -119,7 +119,7 @@ def upload_resumes():
     
     return render_template('upload_success.html')  # New template
 
-# Search candidates endpoint
+# Search candidates
 @app.route('/search', methods=['POST'])
 def search_candidates():
     job_description = request.form['job_description']
@@ -128,7 +128,7 @@ def search_candidates():
     distances, indices = faiss_index.search(np.array([query_embedding]), 10)  # Retrieve 10 candidates first
     results = []
     for idx in indices[0]:
-        if idx < len(metadata):  # Ensure valid index
+        if idx < len(metadata):  # Ensure valid input
             meta = metadata[idx]
             resume_text = extract_text_from_pdf(meta['file_path'])
             explanation = get_mistral_reasoning(job_description, resume_text)
