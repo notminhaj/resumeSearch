@@ -75,6 +75,7 @@ ResumeSearch is a tool designed to help users search and analyze resumes efficie
 
    - Click on the "Upload Resumes" section.
    - Select multiple PDF files to upload.
+   - Sample resumes already exist, delete them from the resumes folder if you wish
 
 4. **Search for Candidates**:
 
