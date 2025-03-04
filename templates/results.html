@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% for result in results %}
+        <h2>{{ result.name }}</h2>
+        <p><strong>Why a good match:</strong> {{ result.explanation }}</p>
+        <p><a href="{{ result.resume_link }}">View Resume</a></p>
+        <hr>
+    {% endfor %}
+    <a href="/">Back to Home</a>
+</body>
+</html>

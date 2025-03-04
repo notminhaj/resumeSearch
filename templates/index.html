@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Search App</title>
+</head>
+<body>
+    <h1>Upload Resume</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label>Select Resumes (PDF):</label>
+        <input type="file" name="resumes" accept=".pdf" multiple required><br>
+        <input type="submit" value="Upload">
+    </form>
+
+    <h1>Search Candidates</h1>
+    <form action="/search" method="post">
+        <label>Job Description:</label><input type="text" name="job_description" required><br>
+        <label>Number of Candidates:</label><input type="number" name="num_candidates" value="5" min="1"><br>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
