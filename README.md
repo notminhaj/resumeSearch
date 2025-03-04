@@ -1,6 +1,6 @@
 # ResumeSearch
 
-ResumeSearch is a tool designed to help users search and analyze resumes efficiently using advanced language models.
+ResumeSearch is a tool designed to help users search and analyze resumes efficiently using language models!
 
 ## Features
 
