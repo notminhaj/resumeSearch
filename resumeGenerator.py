@@ -37,7 +37,7 @@ def generate_experience(role):
 
 # Function to generate a resume
 def generate_resume(role, skills, education, certifications):
-    name = random.choice(["John Doe", "Jane Smith", "Michael Johnson", "Emily Davis", "David Brown"])
+    name = random.choice(["John Doe", "Jane Smith", "Michael Johnson", "Emily Davis", "David Brown", "Bob TheBuilder"])
     contact = f"Email: {name.replace(' ', '').lower()}@example.com | Phone: (555) {random.randint(100,999)}-{random.randint(1000,9999)}"
     summary = f"A dedicated and skilled {role} with experience in {', '.join(skills[:3])}. Passionate about delivering quality results."
 
