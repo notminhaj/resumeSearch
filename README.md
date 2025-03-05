@@ -56,7 +56,7 @@ ResumeSearch is a tool designed to help users search and analyze resumes efficie
    - Add your API key to the `resumeChat.py` file:
 
      ```python
-     MISTRAL_API_KEY = "your_api_key_here"
+     MISTRAL_API_KEY = "YOUR_MISTRAL_API_KEY"
      ```
 
 ## Usage
@@ -64,7 +64,7 @@ ResumeSearch is a tool designed to help users search and analyze resumes efficie
 1. **Run the Application**:
 
    ```bash
-   python main.py
+   python resumeChat.py
    ```
 
 2. **Access the Web Interface**:
