@@ -13,7 +13,7 @@ ResumeSearch is a tool designed to help users search and analyze resumes efficie
 - Python 3.x
 - [Mistral API Key](https://mistral.ai/signup) (subscribe to their free plan)
 - [Git](https://git-scm.com/)
-- [Virtualenv](https://docs.python.org/3/library/venv.html)
+- [Virtualenv](https://docs.python.org/3/library/venv.html) (you probably already have this)
 
 ## Installation
 
@@ -75,7 +75,8 @@ ResumeSearch is a tool designed to help users search and analyze resumes efficie
 
    - Click on the "Upload Resumes" section.
    - Select multiple PDF files to upload.
-   - Sample resumes already exist, delete them from the resumes folder if you wish
+   - You HAVE to upload at least 1 resume upon launch for the app to work.
+   - Sample resumes already exist, delete them from the resumes folder if you wish.
 
 4. **Search for Candidates**:
 
