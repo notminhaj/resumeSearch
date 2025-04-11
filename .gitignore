@@ -1,1 +1,4 @@
-my_project_env/
+resumeChat/
+secret_keys.py
+__pycache__/
+*.pyc

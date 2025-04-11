@@ -5,6 +5,7 @@ import requests
 from flask import Flask, request, render_template, send_from_directory
 from PyPDF2 import PdfReader
 from sentence_transformers import SentenceTransformer
+from secret_keys import MISTRAL_API_KEY
 
 # Set up Flask app
 app = Flask(__name__)
@@ -19,8 +20,7 @@ dimension = 768
 faiss_index = faiss.IndexFlatL2(dimension)
 metadata = []  # Store candidate info
 
-# Mistral API Key
-MISTRAL_API_KEY = "YOUR_MISTRAL_API_KEY"
+# Model configuration
 MODEL_NAME = "mistral-medium"
 
 # Function to extract text from PDF
